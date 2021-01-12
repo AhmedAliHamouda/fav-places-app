@@ -1,0 +1,20 @@
+{
+  "places": "Places",
+  "no_places": "No Places Add Yet!",
+  "add_place": "Add Place",
+  "title_place":"title",
+  "name_place_hint": "Name Place",
+  "no_image": "no Image",
+  "take_pic": "Take a Picture.",
+  "no_location": "No Location Chosen",
+  "current_location": "Current Location",
+  "select_on_map": "Select On Map",
+  "map": "Map",
+  "settings": "Settings",
+  "about_us": "About Us",
+  "other_lang": "Other Language",
+  "choose_lang": "Choose Language",
+  "lang_ar": "\uD83C\uDDEA\uD83C\uDDEC Arabic",
+  "lang_en": "\uD83C\uDDFA\uD83C\uDDF8 English"
+
+}

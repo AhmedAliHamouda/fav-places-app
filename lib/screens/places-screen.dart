@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:places_app/localization/localication-methods.dart';
+import 'package:places_app/localization/set-localization.dart';
 import 'package:places_app/providers/places-provider.dart';
 import 'package:places_app/screens/add-place-screen.dart';
 import 'package:places_app/screens/place-detail-screen.dart';
+import 'package:places_app/widgets/main-drawer.dart';
 import 'package:provider/provider.dart';
 
 class PlacesScreen extends StatelessWidget {
+  static const routeName='places-screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Place'),
+        title: Text(getTextTranslated(context, 'places')),
         actions: [
           IconButton(
               icon: Icon(Icons.add),
@@ -29,7 +33,7 @@ class PlacesScreen extends StatelessWidget {
                 builder: (context, places, child) {
                   if (places.placesItems.length <= 0) {
                     return Center(
-                      child: Text('No Places Added Yet!'),
+                      child: Text(getTextTranslated(context, 'no_places')),
                     );
                   } else {
                     return ListView.builder(
@@ -51,6 +55,7 @@ class PlacesScreen extends StatelessWidget {
                 },
               ),
       ),
+      drawer: MainDrawer(),
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart' as sysPath;
+import 'package:places_app/localization/localication-methods.dart';
 
 class ImageInput extends StatefulWidget {
 
@@ -49,7 +50,7 @@ class _ImageInputState extends State<ImageInput> {
           ),
           child: _storeImage == null
               ? Text(
-                  'No Image',
+                  getTextTranslated(context, 'no_image'),
                   textAlign: TextAlign.center,
                 )
               : Image.file(
@@ -69,7 +70,7 @@ class _ImageInputState extends State<ImageInput> {
                   color: Theme.of(context).primaryColor,
                 ),
                 label: Text(
-                  'Take a picture.',
+                  getTextTranslated(context, 'take_pic'),
                   style: TextStyle(color: Theme.of(context).primaryColor),
                 )))
       ],

@@ -1,0 +1,20 @@
+{
+  "places": "الأماكن المفضله",
+  "no_places": "لم يتم اضافه اماكن ",
+  "add_place": "اضافه مكان",
+  "title_place":"العنوان",
+  "name_place_hint": "اسم المكان",
+  "no_image": "لا يوجد صوره",
+  "take_pic": "التقط صوره.",
+  "no_location": "لم يتم اختيار مكان",
+  "current_location": "مكانك الحالى",
+  "select_on_map": "اختار من الخريطه",
+  "map": "الخريطة",
+  "settings": "الاعدادت",
+  "about_us": "نبذه عنا",
+  "other_lang": "لغة أخرى",
+  "choose_lang": "اختار اللغه",
+  "lang_ar": "\uD83C\uDDEA\uD83C\uDDEC العربية",
+  "lang_en": "\uD83C\uDDFA\uD83C\uDDF8 الانجليزية"
+
+}

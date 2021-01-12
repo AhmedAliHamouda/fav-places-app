@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:places_app/localization/localication-methods.dart';
 import 'package:places_app/models/place.dart';
 
 class MapScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Map'),
+        title: Text(getTextTranslated(context, 'map')),
         actions: [
           if(widget.isSelecting)
             IconButton(icon: Icon(Icons.check), onPressed: _pickedLocation == null ? null :(){

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:places_app/helpers/location-helper.dart';
+import 'package:places_app/localization/localication-methods.dart';
 import 'package:places_app/screens/map-screen.dart';
 
 class LocationInput extends StatefulWidget {
@@ -62,7 +63,7 @@ class _LocationInputState extends State<LocationInput> {
           ),
           child: _previewImageUrl == null
               ? Text(
-                  'No Location Chosen',
+                  getTextTranslated(context, 'no_location'),
                   textAlign: TextAlign.center,
                 )
               : Image.network(
@@ -78,7 +79,7 @@ class _LocationInputState extends State<LocationInput> {
               icon: Icon(
                 Icons.location_on,
               ),
-              label: Text('Current Location'),
+              label: Text(getTextTranslated(context, 'current_location')),
               textColor: Theme.of(context).primaryColor,
               onPressed: getCurrentLocation,
             ),
@@ -86,7 +87,7 @@ class _LocationInputState extends State<LocationInput> {
               icon: Icon(
                 Icons.map,
               ),
-              label: Text('Select on Map'),
+              label: Text(getTextTranslated(context, 'select_on_map')),
               textColor: Theme.of(context).primaryColor,
               onPressed: _selectedOnMap,
             ),

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:places_app/localization/localication-methods.dart';
 import 'package:places_app/models/place.dart';
 import 'package:places_app/providers/places-provider.dart';
 import 'package:places_app/widgets/image-input.dart';
@@ -19,21 +20,22 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   File _pickedImage;
   PlaceLocation _pickedLocation;
 
-  void _selectedImage(File pickImage){
-    _pickedImage=pickImage;
+  void _selectedImage(File pickImage) {
+    _pickedImage = pickImage;
   }
 
-  void _selectedPlace(double lat,double lng){
-    _pickedLocation=PlaceLocation(latitude: lat, longitude: lng);
-
-
+  void _selectedPlace(double lat, double lng) {
+    _pickedLocation = PlaceLocation(latitude: lat, longitude: lng);
   }
 
-  void _savePlace(){
-    if(_titleController.text.isEmpty || _pickedImage==null ||_pickedLocation==null){
+  void _savePlace() {
+    if (_titleController.text.isEmpty ||
+        _pickedImage == null ||
+        _pickedLocation == null) {
       return;
     }
-    Provider.of<Places>(context,listen: false).addNewPlace(_titleController.text, _pickedImage,_pickedLocation);
+    Provider.of<Places>(context, listen: false)
+        .addNewPlace(_titleController.text, _pickedImage, _pickedLocation);
     Navigator.pop(context);
   }
 
@@ -41,7 +43,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Place'),
+        title: Text(getTextTranslated(context, 'add_place')),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -55,27 +57,29 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                     TextField(
                       controller: _titleController,
                       decoration: InputDecoration(
-                        labelText: 'title',
-                        hintText: 'Name Place',
+                        labelText: getTextTranslated(context, 'title_place'),
+                        hintText: getTextTranslated(context, 'name_place_hint'),
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey),
                         ),
                       ),
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     ImageInput(_selectedImage),
-                    SizedBox(height: 20.0,),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     LocationInput(_selectedPlace),
                   ],
                 ),
               ),
             ),
           ),
-
-
           RaisedButton(
             child: Text(
-              'Add Place',
+              getTextTranslated(context, 'add_place'),
               style: TextStyle(fontSize: 18.0),
             ),
             elevation: 0,
